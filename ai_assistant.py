@@ -76,7 +76,7 @@ async def ask_gemini(user_message, chat_history, update):
     contents.append(user_message)
     try:
         response = client.models.generate_content(
-            model="gemini-3.1-pro",
+            model="gemini-2.5-flash",
             contents=contents
         )
         return response.text
