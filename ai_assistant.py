@@ -8,7 +8,7 @@ from google import genai
 from flask import Flask
 import threading
 app = Flask(__name__)
-@app.route('/')
+@app.route("/")
 def keep_alive_endpoint():
     return "Bot is running!", 200
 def start_web_server():
@@ -76,7 +76,7 @@ async def ask_gemini(user_message, chat_history, update):
     contents.append(user_message)
     try:
         response = client.models.generate_content(
-            model = genai.GenerativeModel("gemini-1.5-flash")
+            model = "gemini-1.5-flash"
             contents=contents
         )
         return response.text
