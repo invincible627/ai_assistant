@@ -42,7 +42,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     start_and_help_keyboard = ReplyKeyboardMarkup(buttons, resize_keyboard=True)
     await update.message.reply_text(welcome_message, reply_markup = start_and_help_keyboard)
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    bot_help = "به دستیار هوش مصنوعی خوشآمدید، شما میتوانید سؤالات خود را از هوش مصنوعی بپرسید و جواب سؤالتان را دریافت کنید"
+    bot_help = "به دستیار هوش مصنوعی خوشآمدید، شما میتوانید سؤالات خود را از هوش مصنوعی بپرسید و جواب سؤالتان را دریافت کنید وقتی شروع را لمس کنید، و چت را آغاز کنید برای خروج از چت برای ادمینها اطلاع رسانی باید از /stop استفاده کنید، برای کاربران معمولی برای پایان چت و ورود به موضوع جدید باید از /stop استفاده کنید"
     await update.message.reply_text(bot_help)
 GET_MESSAGE = 0
 async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
