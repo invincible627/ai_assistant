@@ -68,15 +68,15 @@ async def send_broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def ask_gemini(user_message, chat_history, update):
     client = genai.Client(api_key=api_key)
     contents = []
-    for msg in chat_history:
-        if msg["role"] == "user":
-            contents.append(msg["content"])
-        elif msg["role"] == "assistant":
-            contents.append(msg["content"])
+    for message in chat_history:
+        if message["role"] == "user":
+            contents.append(message["content"])
+        elif message["role"] == "assistant":
+            contents.append(message["content"])
     contents.append(user_message)
     try:
         response = client.models.generate_content(
-            model='gemini-1.5-flash',
+            model = genai.GenerativeModel("gemini-1.5-flash")
             contents=contents
         )
         return response.text
